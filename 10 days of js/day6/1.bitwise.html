@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>bitwise AND</title>
+  </head>
+  <body>
+    <h2>Bitwise Operator</h2>
+    <script type="text/javascript">
+    function  getMaxLessThanK(n,k){
+        let lessThanK=0;
+        for(let a=1;a<n;a++){
+          for(let b=a+1;b<=n;b++){
+            if((a&b)<k){//bitwise AND
+            if((a&b)>lessThanK)
+            lessThanK=a&b;
+            }
+          }
+        }
+        return lessThanK;
+      }
+     console.log(getMaxLessThanK(8, 5));
+    </script>
+  </body>
+</html>

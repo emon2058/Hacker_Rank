@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>switch statement</title>
+</head>
+
+<body>
+  <h2>Switch Statement</h2>
+  <pre>
+  <code>
+ function getLetter(s) {
+    let array=s.split(""); //it makes string like [a,b,c,d,e,f]
+    let letter;
+    switch(array[0]){ //first letter in the array is a
+        case 'a'||'e'||'i'||'o'||'u':
+        letter='A'
+        break;
+        case 'b'||'c'||'d'||'f'||'g':
+        letter='B'
+        break;
+        case 'h'||'j'||'k'||'l'||'m':
+        letter='C'
+        break;
+        default:
+        letter='D';
+    }
+    return letter;
+}
+console.log(getLetter('abcdef'));
+
+solve:2->
+  function getLetter(s) {
+    let letter;
+    switch (true) {
+        case 'aeiou'.includes(s[0]): //if matches then return true
+            letter = 'A';
+            break;
+        case 'bcdfg'.includes(s[0]):
+            letter = 'B';
+            break;
+        case 'hjklm'.includes(s[0]):
+            letter = 'C';
+            break;
+        case 'npqrstvwxyz'.includes(s[0]):
+            letter = 'D';
+            break;
+    }
+    return letter;
+}
+  </code>
+</pre>
+  <p><b>Result :<span id="result"></span></b> </p>
+  <script type="text/javascript">
+    function getLetter(s) {
+      let array = s.split("");
+      let letter;
+      switch (array[0]) {
+        case 'a' || 'e' || 'i' || 'o' || 'u':
+          letter = 'A'
+          break;
+        case 'b' || 'c' || 'd' || 'f' || 'g':
+          letter = 'B'
+          break;
+        case 'h' || 'j' || 'k' || 'l' || 'm':
+          letter = 'C'
+          break;
+        default:
+          letter = 'D';
+      }
+
+      return letter;
+    }
+    console.log(getLetter('abcdef'));
+    document.getElementById('result').innerHTML = getLetter('abcdef');
+  </script>
+</body>
+
+</html>

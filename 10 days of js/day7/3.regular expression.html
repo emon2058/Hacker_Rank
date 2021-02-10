@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>regular experssion</title>
+</head>
+
+<body>
+  <h2>Regular Experssion</h2>
+  <pre><code>
+    function regexVar() {
+      let re = /\d+/g
+      return re;
+    }
+
+    const re = regexVar();
+    const s = "1.12, 111";
+    const r = s.match(re);
+    console.log(r);
+  </code> </pre>
+  <p><b><span id="re"></span> </b> </p>
+<script type="text/javascript">
+  function regexVar() {
+    let re = /\d+/g
+    return re;
+  }
+
+  const re = regexVar();
+  const s = "1.12, 111";
+  const r = s.match(re);
+  console.log(r);
+  document.getElementById("re").innerHTML=r
+  // for (const e of r) {
+  //   console.log(e);
+  // }
+</script>
+</body>
+
+</html>

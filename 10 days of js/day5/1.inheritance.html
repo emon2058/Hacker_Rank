@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>inheritance</title>
+  </head>
+  <body>
+    <h2>Inheritance</h2>
+    <pre>
+      <code>
+        class Rectangle {
+        constructor(w, h) {
+            this.w = w;
+            this.h = h;
+        }
+      }
+        Rectangle.prototype.area=function(){
+          return this.w*this.h;
+        }
+
+      class Square extends Rectangle{
+        constructor(length){
+          super(length);
+          this.h=length;
+          this.w=length;
+        }
+      }
+      if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+          const rec = new Rectangle(3, 4);
+          const sqr = new Square(3);
+
+          console.log(rec.area());
+          console.log(sqr.area());
+      } else {
+          console.log(-1);
+          console.log(-1);
+      }
+
+solve2->
+    class Rectangle {
+      constructor(w, h) {
+          this.w = w;
+          this.h = h;
+    }
+}
+
+    Rectangle.prototype.area = function() {
+    return ( this.w * this.h );
+}
+
+class Square extends Rectangle {
+    constructor(s) {
+        super(s, s);
+    }
+}
+
+if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+    const rec = new Rectangle(3, 4);
+    const sqr = new Square(3);
+
+    console.log(rec.area());
+    console.log(sqr.area());
+} else {
+    console.log(-1);
+    console.log(-1);
+}
+
+solve3->
+
+class Rectangle {
+  constructor(w, h) {
+      this.w = w;
+      this.h = h;
+    }
+}
+
+Rectangle.prototype.area = function() {
+    if(!this.h) return this.w * this.w;
+    return this.w * this.h;
+}
+
+class Square extends Rectangle{
+
+}
+
+if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+    const rec = new Rectangle(3, 4);
+    const sqr = new Square(3);
+
+    console.log(rec.area());
+    console.log(sqr.area());
+} else {
+    console.log(-1);
+    console.log(-1);
+}
+
+      </code>
+    </pre>
+  </body>
+  <script type="text/javascript">
+    class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+  }
+    Rectangle.prototype.area=function(){
+      return this.w*this.h;
+    }
+
+  class Square extends Rectangle{
+    constructor(length){
+      super(length);
+      this.h=length;
+      this.w=length;
+    }
+  }
+  if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+      const rec = new Rectangle(3, 4);
+      const sqr = new Square(3);
+
+      console.log(rec.area());
+      console.log(sqr.area());
+  } else {
+      console.log(-1);
+      console.log(-1);
+  }
+  </script>
+</html>

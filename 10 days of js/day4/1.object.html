@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>object</title>
+</head>
+
+<body>
+  <h2>Object</h2>
+  <pre>
+      <code>
+  function Rectangle(a, b) {
+   let rec={
+      length:a,
+      width:b,
+      perimeter:2*(a+b),
+      area:a*b
+    }
+    return rec;
+}
+const rec = new Rectangle(4, 2);
+
+  console.log(rec.length);
+  console.log(rec.width);
+  console.log(rec.perimeter);
+  console.log(rec.area);
+solve:2->
+  function Rectangle(a, b) {
+  this.length = a;
+  this.width = b;
+  this.area = a * b;
+  this.perimeter = 2 * (a + b);
+}
+const rec = new Rectangle(4, 2);
+
+console.log(rec.length);
+console.log(rec.width);
+console.log(rec.perimeter);
+console.log(rec.area);
+
+solve:3->
+class Rectangle {
+  constructor(a, b) {
+    this.length = a;
+    this.width = b;
+    this.area = a * b;
+    this.perimeter = 2 * (a + b);
+  }
+}
+const rec = new Rectangle(4, 2);
+
+console.log(rec.length);
+console.log(rec.width);
+console.log(rec.perimeter);
+console.log(rec.area);
+
+      </code>
+    </pre>
+  <p><b>Length :<span id="length"></span></b></p>
+  <p><b>Width :<span id="width"></span></b></p>
+  <p><b>Area :<span id="area"></span></b> </p>
+  <p><b>Perimeter :<span id="perimeter"></span> </b> </p>
+</body>
+<script type="text/javascript">
+  function Rectangle(a, b) {
+    let rec = {
+      length: a,
+      width: b,
+      perimeter: 2 * (a + b),
+      area: a * b
+    }
+    return rec;
+  }
+  const rec = new Rectangle(4, 2);
+
+  console.log(rec.length);
+  document.getElementById('length').innerHTML = rec.length;
+  console.log(rec.width);
+  document.getElementById('width').innerHTML = rec.width;
+  console.log(rec.perimeter);
+  document.getElementById('area').innerHTML = rec.area;
+  console.log(rec.area);
+  document.getElementById('perimeter').innerHTML = rec.perimeter;
+</script>
+
+</html>

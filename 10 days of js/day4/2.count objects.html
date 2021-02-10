@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>count objects</title>
+  </head>
+  <body>
+    <h2>Count Objects</h2>
+    <pre>
+      <code>
+    function getCount(objects) {
+    let sameValue=0;
+    for(let i=0;i&ltobjects.length;i++){ //here length is 5
+       if(objects[i].x==objects[i].y){ //objects[0].x will be 1 and objects[0].y will be 1
+        sameValue +=1;
+        }
+    }
+  return sameValue;
+}
+
+  const objects=[
+  { x:1,
+    y:1},
+  { x:2,
+    y:3},
+  { x:3,
+    y:3},
+  { x:3,
+    y:4},
+  { x:4,
+    y:5}
+  ];
+   console.log(getCount(objects));
+
+solve:2->
+  const getCount = objects => objects.filter(o => o.x==o.y).length;
+<!-- filter() method creates an array filled with all array elements
+ that pass a test (provided as a function). -->
+  const objects=[
+  { x:1,
+    y:1},
+  { x:2,
+    y:3},
+  { x:3,
+    y:3},
+  { x:3,
+    y:4},
+  { x:4,
+    y:5}
+  ];
+
+  console.log(getCount(objects));
+
+solve:3->
+    function getCount(obj) {
+        let i = 0;
+        obj.map(o => o.x == o.y ? i++ : '');
+  <!-- The arr.map() method creates a new array with the results of
+  called function for every array element. This function calls the
+  argument function once for each element of the given array in order. -->
+        return i;
+    }
+
+  const objects=[
+  { x:1,
+    y:1},
+  { x:2,
+    y:3},
+  { x:3,
+    y:3},
+  { x:3,
+    y:4},
+  { x:4,
+    y:5}
+  ];
+
+   console.log(getCount(objects));
+      </code>
+    </pre>
+  </body>
+  <script type="text/javascript">
+    function getCount(objects) {
+    let sameValue=0;
+    for(let i=0;i<objects.length;i++){ //here length is 2
+      if(objects[i].x==objects[i].y){ //objects[0].x will be 1 and objects[0].y will be 1
+        sameValue +=1;
+        }
+    }
+return sameValue;
+}
+
+const objects=[
+{ x:1,
+  y:1},
+  { x:3,
+    y:2}
+];
+    console.log(getCount(objects));
+  </script>
+</html>

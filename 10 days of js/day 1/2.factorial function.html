@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>function</title>
+  </head>
+  <body>
+    <h2>Factorial Function</h2>
+    <pre>
+      <code>
+        function factorial(n){
+            if(n>1){
+                return n*factorial(n-1);
+            }
+            return 1;
+        }
+        document.getElementById('factorial').innerHTML=(factorial(5));
+      </code>
+    </pre>
+    <p><b>Result : <span id="factorial"></span></b></p>
+    <script type="text/javascript">
+
+      function factorial(n){
+        if(n>1){
+          return n*factorial(n-1);
+        }
+        return 1;
+      }
+      document.getElementById('factorial').innerHTML=(factorial(5))
+      console.log(factorial(5));
+    </script>
+  </body>
+</html>

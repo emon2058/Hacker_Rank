@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>try,catch,finally</title>
+  </head>
+  <body>
+    <h2>Try Catch Finally</h2>
+    <pre>
+      <code>
+        function reverseString(s) {
+        try{
+<!-- ('1234').split("") returns an array ["1","2","3","4"]
+      ["1","2","3","4"].reverse() returns ["4","3","2","1"]
+      ["4","3","2","1"].join("") returns 4321   -->
+          s=(s.split("").reverse().join(""))
+        }
+        catch(error){
+          console.log(error.message)
+        }
+        finally{
+          console.log(s);
+        }
+      }
+        reverseString('1234');
+      </code>
+    </pre>
+    <p><b><span id="resError"></span></b></p>
+    <p><b><span id="res"></span></b></p>
+  </body>
+  <script type="text/javascript">
+  function reverseString(s) {
+  try{
+    s=(s.split("").reverse().join(""))
+  }
+  catch(error){
+    console.log(error.message)
+    document.getElementById('resError').innerHTML=error.message;
+  }
+  finally{
+    console.log(s);
+    document.getElementById('res').innerHTML=s;
+  }
+}
+reverseString(('1234'));
+  </script>
+</html>

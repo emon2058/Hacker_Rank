@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>loop</title>
+</head>
+
+<body>
+  <h2>Loops</h2>
+  <pre>
+      <code>
+        function vowelsAndConsonants(s) {
+          var vowel;
+          var consonent='';
+        for(let i=0;i&lts.length;i++){
+          if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'){
+          vowel=s[i];
+          console.log(vowel) //first print all vowel
+          }
+          else {
+            consonent += s[i]+'\n'
+          }
+        }
+        console.log(consonent) //when all vowel printed then print consonent
+    }
+    vowelsAndConsonants('javascriptLoops');
+
+    solve :2->
+
+    function vowelsAndConsonants(s) {
+    let vowels = ["a", "e", "i", "o", "u"];
+
+    for(let v of s) {   //it separates the string so that we can check it individually.
+        if(vowels.includes(v)) //check every string that matches the vowels.
+            console.log(v); //print vowels
+    }
+
+    for(let v of s) {
+        if(!vowels.includes(v)) //check that is not vowels
+            console.log(v); //print consonents
+    }
+}
+
+vowelsAndConsonants('javascriptLoops');
+
+solve:3->
+
+function vowelsAndConsonants(s) {
+    let consonents = [];
+    for (let l in s){
+        if ("aeiou".includes(s[l])){
+            console.log(s[l]);
+        }
+        else {
+            consonents.push(s[l]);
+        }
+    }
+    for (let nV in consonents){
+        console.log(consonents[nV]);
+    }
+}
+
+vowelsAndConsonants('javascriptLoops');
+
+solve:4->
+
+function vowelsAndConsonants(s) {
+    [...s].forEach(c => 'aeiou'.includes(c) ?
+        console.log(c) : null); // if matches ('aeiou') print a/e/i/o/u else null
+    [...s].forEach(c => 'aeiou'.includes(c) ?
+        null : console.log(c)); //if matches ('aeiou') print null else consonents
+}
+
+vowelsAndConsonants('javascriptLoops');
+      </code>
+    </pre>
+</body>
+<script type="text/javascript">
+  function vowelsAndConsonants(s) {
+    var vowel;
+    var consonent = '';
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') {
+        vowel = s[i];
+        console.log(vowel)
+      } else {
+        consonent += s[i] + '\n'
+      }
+    }
+    console.log(consonent)
+  }
+  vowelsAndConsonants('javascriptLoops')
+</script>
+
+</html>

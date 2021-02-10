@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Conditional statement</title>
+  </head>
+  <body>
+    <h1>If Else statement</h1>
+    <code>
+      <pre>
+    function getGrade(score) {
+      let grade;
+       Write your code here
+      if((score<=30)&&(score>25)){
+          grade='A';
+      }
+      else if((score<=25)&&(score>20)){
+          grade='B';
+      }
+      else if((score<=20)&&(score>15)){
+          grade='C';
+      }
+      else if((score<=15)&&(score>10)){
+          grade='D';
+      }
+      else if((score<=10)&&(score>5)){
+          grade='E';
+      }
+      else{
+      grade='F'
+      }
+      return grade;
+    }
+
+      console.log(getGrade(11));
+solve:2->
+function getGrade(score) {
+    return 'FEDCBA'[parseInt((score > 0 ? score - 1 : 0) / 5)];
+    //(11-1=10)(10/5=2) 2 is D.if result is 1 then grade will be E, 0 is F.
+}
+solve:3->
+function getGrade(score) {
+    return 'FFEDCBA'[Math.ceil(score/5.0)];
+    //1 is F,2 is E and so on.
+}
+solve:4->
+function getGrade(score) {
+    return 'FEDCBA'[~~((score-1)/5)];
+//0 is F,1 is E and so on (~~ means if the value is 2.6 then it prints 2)
+}
+    </pre>
+</code>
+<p><b>Result:<span id="demo"></span> </b></p>
+  </body>
+  <script type="text/javascript">
+function getGrade(score) {
+  let grade;
+  // Write your code here
+  if((score<=30)&&(score>25)){
+      grade='A';
+  }
+  else if((score<=25)&&(score>20)){
+      grade='B';
+  }
+  else if((score<=20)&&(score>15)){
+      grade='C';
+  }
+  else if((score<=15)&&(score>10)){
+      grade='D';
+  }
+  else if((score<=10)&&(score>5)){
+      grade='E';
+  }
+  else{
+  grade='F'
+  }
+  return grade;
+}
+  console.log(getGrade(11));
+  document.getElementById('demo').innerHTML=getGrade(11)
+  </script>
+</html>

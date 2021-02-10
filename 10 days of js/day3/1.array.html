@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Array</title>
+  </head>
+  <body>
+    <h2>Array</h2>
+    <pre>
+      <code>
+        function getSecondLargest(nums) {
+          let firstLargest=nums[0],secondLargest=0;
+          for(let i=1;i&ltnums.length;i++){
+
+          if(nums[i]&gtfirstLargest){
+            secondLargest=firstLargest;
+            firstLargest=num[i];
+          }
+          if((num[i]&ltfirstLargest) && (num[i]&gtsecondLargest)) {
+            secondLargest=nums[i];
+          }
+        }
+          return secondLargest;
+    }
+    console.log(getSecondLargest('2,5,1,4,4,3'));
+solve:2->
+      function getSecondLargest(nums) {
+        let numSorted = nums.slice(0).sort((a, b) => a - b)
+        let max = Math.max(...numSorted);
+        let maxSecond = 0;
+        for (let i = numSorted.length - 1; i >= 0; i--){
+            if (numSorted[i] < max) {
+                maxSecond = numSorted[i];
+                break;
+            }
+          }
+        return maxSecond;
+    }
+    console.log(getSecondLargest('2,5,1,4,4,3'));
+      </code>
+    </pre>
+    <p><b>Second Largest Value : <span id="value"></span> </b> </p>
+  </body>
+  <script type="text/javascript">
+    function getSecondLargest(nums) {
+      let firstLargest=nums[0],secondLargest=0;
+      for(let i=1;i<nums.length;i++){
+
+      if(nums[i]>firstLargest){
+        secondLargest=firstLargest;
+        firstLargest=nums[i];
+      }
+      if((nums[i]<firstLargest) && (nums[i]>secondLargest)) {
+        secondLargest=nums[i];
+      }
+    }
+      return secondLargest;
+}
+  document.getElementById('value').innerHTML=getSecondLargest('2,5,1,4,4,3');
+    console.log(getSecondLargest('2,5,1,4,4,3'));
+    </script>
+</html>

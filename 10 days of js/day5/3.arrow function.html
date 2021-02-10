@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>arrow function</title>
+</head>
+
+<body>
+  <h2>Arrow Function</h2>
+  <pre><code>
+    function modifyArray(nums) {
+      let newarr=[];
+      for (let i = 0; i &lt nums.length; i++) {
+        if (nums[i] % 2 == 0) {
+          newarr.push(nums[i] * 2);
+        } else {
+          newarr.push(nums[i] * 3)
+        }
+
+      }
+            return newarr;
+    }
+console.log(modifyArray([1,2,3,4,5]).toString().split(',').join(' '))
+
+solve2->
+function modifyArray(nums) {
+    var something = function(n){
+        if(n%2==0)
+            return n*2;
+        else
+            return n*3;
+    }
+    var newArray = nums.map(something);
+    return newArray;
+
+}
+console.log(modifyArray([1,2,3,4,5]).toString().split(',').join(' '))
+
+// method 2
+function modifyArray(nums) {
+    var something = function(n){
+        var a = (n%2==0) ? n*2: n*3;
+        return a;
+    }
+    var newArray = nums.map(something);
+    return newArray;
+}
+console.log(modifyArray([1,2,3,4,5]).toString().split(',').join(' '))
+
+//method 3
+function modifyArray(nums) {
+    var something = n => n = (n%2==0) ? n*2: n*3;
+    var newArray = nums.map(something);
+    return newArray;
+
+}
+console.log(modifyArray([1,2,3,4,5]).toString().split(',').join(' '))
+
+//method 4
+function modifyArray(nums) {
+    var newArray = nums.map(n => n = (n%2==0) ? n*2: n*3);
+    return newArray;
+}
+console.log(modifyArray([1,2,3,4,5]).toString().split(',').join(' '))
+
+//method 5
+function modifyArray(nums) {
+    return nums.map(n => n = (n%2==0) ? n*2: n*3);
+}
+console.log(modifyArray([1,2,3,4,5]).toString().split(',').join(' '))
+
+  </code></pre>
+</body>
+<script type="text/javascript">
+  function modifyArray(nums) {
+    let newarr=[];
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] % 2 == 0) {
+        newarr.push(nums[i] * 2);
+      } else {
+        newarr.push(nums[i] * 3)
+      }
+
+    }
+          return newarr;
+  }
+  console.log(modifyArray([1,2,3,4,5]).toString().split(',').join(' '))
+</script>
+
+</html>

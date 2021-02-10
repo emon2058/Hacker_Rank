@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>regular experssions</title>
+</head>
+<body>
+  <h2>Regular Experssions</h2>
+  <pre>
+    <code>
+      function regexVar() {
+        let re=/(Mr|Mrs|Ms|Dr|Er)(?=\.).+([a-zA-Z])+$/
+        console.log(re)
+          return re;
+    }
+      const re = regexVar();
+      let str="Mr.X"
+        console.log(str.match(re));
+        console.log(!!str.match(re));
+        console.log(re.test(str));
+      solve2:
+      let re = new RegExp('^(Mr|Mrs|Ms|Dr|Er)(\\.)([a-zA-Z])+$');
+    </code>
+  </pre>
+  <p><b><span id="re1"></span> </b><br>
+    <b><span id="re2"></span> </b><br>
+    <b><span id="re3"></span> </b>
+   </p>
+</body>
+<script type="text/javascript">
+  function regexVar() {
+    let re=/(Mr|Mrs|Ms|Dr|Er)(?=\.).+([a-zA-Z])+$/
+    console.log(re)
+      return re;
+}
+  const re = regexVar();
+  let str="Mr.X"
+    console.log(str.match(re));
+    document.getElementById("re1").innerHTML=str.match(re)
+    console.log(!!str.match(re));
+    document.getElementById("re2").innerHTML=!!str.match(re)
+    console.log(re.test(str));
+    document.getElementById("re3").innerHTML=re.test(str)
+</script>
+
+</html>

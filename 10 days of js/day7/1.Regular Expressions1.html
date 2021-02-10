@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>regular experssions</title>
+</head>
+<body>
+  <h2>Regular Experssions</h2>
+  <pre>
+    <code>
+      function regexVar() {
+        let re=/^([aeiou]).+\1$/;
+        console.log(re)
+          return re;
+      }
+
+      const re = regexVar();
+      console.log(re.test("adada"));
+
+      <div>
+<p>        ^[aeiou] finds first letter that contain a/e/i/o/u  <br>
+        .+ read all character  </br>
+        \1$ last character that matches the first letter.
+        </p>
+      </div>
+      solve2:
+      var re = /^[a].+[a]$ | ^[e].+[e]$ | ^[i].+[i]$ | ^[o].+[o]$ | ^[u].+[u]$/;
+    </code>
+  </pre>
+  <p><b><span id="re1"></span> <br>
+    <span id="re2"></span></b>
+   </p>
+</body>
+<script type="text/javascript">
+  function regexVar() {
+    let re=/^([aeiou]).+\1$/;
+    console.log(re)
+      return re;
+}
+  const re = regexVar();
+  let str="asda"
+  console.log(str.match(re))
+  document.getElementById("re1").innerHTML=str.match(re)
+  console.log(re.test(str));
+  document.getElementById("re2").innerHTML=re.match(str)
+</script>
+
+</html>

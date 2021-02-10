@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>arithmetic operators</title>
+  </head>
+  <body>
+    <h2>Arithmetic Operator</h2>
+    <pre>
+      <code>
+        /**
+        *   Calculate the perimeter of a rectangle.
+        *
+        *	length: The length of the rectangle.
+        *   width: The width of the rectangle.
+        *
+        *	Return a number denoting the perimeter of a rectangle.
+        **/
+        function getArea(length, width) {
+          let area;
+          // Write your code here
+          area=length*width
+          // console.log(area)
+          return area;
+        }
+
+        function getPerimeter(length, width) {
+            let perimeter;
+            // Write your code here
+            perimeter=2*(length+width)
+            return perimeter;
+        }
+        console.log(getArea(length, width));
+        console.log(getPerimeter(length, width));
+      </code>
+    </pre>
+    <p><b>Result:Area=<span id="area"></span><br>
+    Perimeter=<span id="perimeter"></span></b>
+  </p>
+    <script type="text/javascript">
+      function getArea(length, width) {
+        let area;
+        area=length*width
+        // console.log(area)
+        return area;
+      }
+
+      function getPerimeter(length, width) {
+          let perimeter;
+          // Write your code here
+          perimeter=2*(length+width)
+          return perimeter;
+      }
+
+      let length=3
+      let width=4.5
+      console.log(getArea(length,width));
+      document.getElementById('area').innerHTML=getArea(length,width);
+      console.log(getPerimeter(length,width));
+      document.getElementById('perimeter').innerHTML=getPerimeter(length,width);
+    </script>
+  </body>
+</html>
